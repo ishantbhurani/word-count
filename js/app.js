@@ -4,7 +4,7 @@
 // - update the count as the user types
 
 const textEl = document.getElementById("txtid");
-const wordCountEl = document.getElementById("count");
+const wordCountEl = document.getElementById("word-count");
 
 function updateCount() {
   const text = this.value.trim();
