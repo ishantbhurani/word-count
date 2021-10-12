@@ -5,8 +5,14 @@
 
 const textEl = document.getElementById("txtid");
 const wordCountEl = document.getElementById("word-count");
+const charCountEl = document.getElementById("char-count");
 
 function updateCount() {
+  // update character count
+  charCountEl.textContent = this.value.length;
+
+  // update word count
+  // remove trailing space(s)
   const text = this.value.trim();
   if (text) {
     wordCountEl.textContent = text
