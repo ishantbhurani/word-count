@@ -17,7 +17,7 @@ function updateCount() {
   if (text) {
     wordCountEl.textContent = text
       .split(/\s+/)
-      .filter((word) => /[A-Za-z]+/.test(word)).length;
+      .filter((word) => /^[A-Za-z]+/.test(word)).length;
   } else {
     wordCountEl.textContent = "0";
   }
