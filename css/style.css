@@ -22,3 +22,8 @@ textarea {
   height: 60%;
   width: 80%;
 }
+
+p {
+  margin: 0.5em;
+  text-align: center;
+}
