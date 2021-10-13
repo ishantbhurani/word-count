@@ -35,4 +35,5 @@ textEl.addEventListener("input", updateCount);
 demoTextBtn.addEventListener("click", function () {
   textEl.value =
     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta quaerat cum modi quae, eligendi eius voluptates doloribus aliquid eos sequi sunt voluptatum quam natus non! Nobis laborum harum quisquam dolorem saepe quibusdam ipsam eaque hic, maxime temporibus reiciendis porro recusandae blanditiis magni doloremque earum distinctio dignissimos quaerat incidunt repudiandae et.";
+  textEl.dispatchEvent(new CustomEvent("input"));
 });
