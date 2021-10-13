@@ -19,7 +19,7 @@ let countSpaces = true;
 function updateCount() {
   // update character count
   if (countSpaces) charCountEl.textContent = this.value.length;
-  else charCountEl.textContent = this.value.replace(/\s+/, "").length;
+  else charCountEl.textContent = this.value.replace(/\s+/g, "").length;
 
   // update word count
   // remove trailing space(s)
