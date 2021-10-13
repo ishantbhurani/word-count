@@ -10,6 +10,7 @@ const sentenceCountEl = document.getElementById("sentence-count");
 const paraCountEl = document.getElementById("para-count");
 const demoTextBtn = document.getElementById("demo-text");
 const clearBtn = document.getElementById("clear");
+const copyBtn = document.getElementById("copy");
 
 function updateCount() {
   // update character count
@@ -41,6 +42,20 @@ demoTextBtn.addEventListener("click", function () {
   textEl.value =
     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta quaerat cum modi quae, eligendi eius voluptates doloribus aliquid eos sequi sunt voluptatum quam natus non! Nobis laborum harum quisquam dolorem saepe quibusdam ipsam eaque hic, maxime temporibus reiciendis porro recusandae blanditiis magni doloremque earum distinctio dignissimos quaerat incidunt repudiandae et.";
   textEl.dispatchEvent(new CustomEvent("input"));
+});
+
+copyBtn.addEventListener("click", function () {
+  textEl.focus();
+  textEl.select();
+  textEl.setSelectionRange(0, 99999); /* For mobile devices */
+  navigator.clipboard.writeText(textEl.value).then(
+    function () {
+      console.log("copy successful");
+    },
+    function (err) {
+      console.log("copy failure");
+    }
+  );
 });
 
 clearBtn.addEventListener("click", function () {
