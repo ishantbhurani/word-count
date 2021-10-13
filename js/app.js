@@ -6,6 +6,7 @@
 const textEl = document.getElementById("txtid");
 const wordCountEl = document.getElementById("word-count");
 const charCountEl = document.getElementById("char-count");
+const sentenceCountEl = document.getElementById("sentence-count");
 
 function updateCount() {
   // update character count
@@ -21,6 +22,8 @@ function updateCount() {
   } else {
     wordCountEl.textContent = "0";
   }
+
+  sentenceCountEl.textContent = text.match(/\w[.?!](\s|$)/g).length;
 }
 
 textEl.addEventListener("input", updateCount);
