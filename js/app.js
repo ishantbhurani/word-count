@@ -21,8 +21,12 @@ function updateCount() {
     wordCountEl.textContent = text
       .split(/\s+/)
       .filter((word) => /^[A-Za-z]+/.test(word)).length;
-    sentenceCountEl.textContent = text.match(/\w[.?!](\s|$)/g).length;
-    paraCountEl.textContent = text.replace(/\n$/gm, "").split(/\n/).length;
+
+    const sentenceCount = text.match(/\w[.?!](\s|$)/g)?.length;
+    if (sentenceCount) sentenceCountEl.textContent = sentenceCount;
+
+    const paraCount = text.replace(/\n$/gm, "").split(/\n/)?.length;
+    if (paraCount) paraCountEl.textContent = paraCount;
   } else {
     wordCountEl.textContent = "0";
     sentenceCountEl.textContent = "0";
