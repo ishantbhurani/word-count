@@ -9,6 +9,7 @@ const charCountEl = document.getElementById("char-count");
 const sentenceCountEl = document.getElementById("sentence-count");
 const paraCountEl = document.getElementById("para-count");
 const demoTextBtn = document.getElementById("demo-text");
+const clearBtn = document.getElementById("clear");
 
 function updateCount() {
   // update character count
@@ -39,5 +40,10 @@ textEl.addEventListener("input", updateCount);
 demoTextBtn.addEventListener("click", function () {
   textEl.value =
     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta quaerat cum modi quae, eligendi eius voluptates doloribus aliquid eos sequi sunt voluptatum quam natus non! Nobis laborum harum quisquam dolorem saepe quibusdam ipsam eaque hic, maxime temporibus reiciendis porro recusandae blanditiis magni doloremque earum distinctio dignissimos quaerat incidunt repudiandae et.";
+  textEl.dispatchEvent(new CustomEvent("input"));
+});
+
+clearBtn.addEventListener("click", function () {
+  textEl.value = "";
   textEl.dispatchEvent(new CustomEvent("input"));
 });
