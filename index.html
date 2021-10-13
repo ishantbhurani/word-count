@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Dosis&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@700;900&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/style.css" />
@@ -15,16 +15,47 @@
     <script src="./js/app.js" defer></script>
   </head>
   <body>
-    <div class="container">
+    <header class="controls">
+      <form>
+        <div class="form-group">
+          <input type="checkbox" name="spellCheck" id="spell-check" />
+          <label for="spell-check">Spell Check</label>
+        </div>
+        <div class="form-group">
+          <input type="checkbox" name="countSpaces" id="count-spaces" />
+          <label for="count-spaces">Count spaces/tabs as characters</label>
+        </div>
+      </form>
+      <button class="btn" id="demo-text">Demo Text</button>
+      <button class="btn" id="copy">Copy</button>
+      <button class="btn" id="clear">Clear</button>
+    </header>
+    <main class="editor">
       <textarea
         id="txtid"
         name="txtname"
         rows="4"
         cols="50"
-        maxlength="200"
+        placeholder="Hello World!"
       ></textarea>
-      <p>Word count: <span id="word-count">0</span></p>
-      <p>Character count: <span id="char-count">0</span></p>
-    </div>
+    </main>
+    <footer class="results">
+      <div class="chars">
+        <p id="char-count" class="count">0</p>
+        <p>Characters</p>
+      </div>
+      <div class="words">
+        <p id="word-count" class="count">0</p>
+        <p>Words</p>
+      </div>
+      <div class="sentences">
+        <p id="sentence-count" class="count">0</p>
+        <p>Sentences</p>
+      </div>
+      <div class="paras">
+        <p id="para-count" class="count">0</p>
+        <p>Paragraphs</p>
+      </div>
+    </footer>
   </body>
 </html>
