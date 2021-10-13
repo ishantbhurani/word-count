@@ -12,6 +12,7 @@ const demoTextBtn = document.getElementById("demo-text");
 const clearBtn = document.getElementById("clear");
 const copyBtn = document.getElementById("copy");
 const cbCountSpaces = document.getElementById("count-spaces");
+const cbSpellCheck = document.getElementById("spell-check");
 
 let countSpaces = true;
 
@@ -70,4 +71,8 @@ clearBtn.addEventListener("click", function () {
 cbCountSpaces.addEventListener("change", function () {
   countSpaces = this.checked;
   textEl.dispatchEvent(new CustomEvent("input"));
+});
+
+cbSpellCheck.addEventListener("change", function () {
+  textEl.spellcheck = this.checked;
 });
