@@ -11,10 +11,14 @@ const paraCountEl = document.getElementById("para-count");
 const demoTextBtn = document.getElementById("demo-text");
 const clearBtn = document.getElementById("clear");
 const copyBtn = document.getElementById("copy");
+const cbCountSpaces = document.getElementById("count-spaces");
+
+let countSpaces = true;
 
 function updateCount() {
   // update character count
-  charCountEl.textContent = this.value.length;
+  if (countSpaces) charCountEl.textContent = this.value.length;
+  else charCountEl.textContent = this.value.replace(/\s+/, "").length;
 
   // update word count
   // remove trailing space(s)
@@ -60,5 +64,10 @@ copyBtn.addEventListener("click", function () {
 
 clearBtn.addEventListener("click", function () {
   textEl.value = "";
+  textEl.dispatchEvent(new CustomEvent("input"));
+});
+
+cbCountSpaces.addEventListener("change", function () {
+  countSpaces = this.checked;
   textEl.dispatchEvent(new CustomEvent("input"));
 });
