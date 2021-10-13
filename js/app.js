@@ -20,13 +20,13 @@ function updateCount() {
     wordCountEl.textContent = text
       .split(/\s+/)
       .filter((word) => /^[A-Za-z]+/.test(word)).length;
+    sentenceCountEl.textContent = text.match(/\w[.?!](\s|$)/g).length;
+    paraCountEl.textContent = text.replace(/\n$/gm, "").split(/\n/).length;
   } else {
     wordCountEl.textContent = "0";
+    sentenceCountEl.textContent = "0";
+    paraCountEl.textContent = "0";
   }
-
-  sentenceCountEl.textContent = text.match(/\w[.?!](\s|$)/g).length;
-
-  paraCountEl.textContent = text.replace(/\n$/gm, "").split(/\n/).length;
 }
 
 textEl.addEventListener("input", updateCount);
