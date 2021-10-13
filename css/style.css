@@ -116,8 +116,34 @@ footer .count {
   footer {
     width: 100%;
     max-width: 100%;
+    min-width: 100%;
     flex-direction: row;
     align-items: center;
+    justify-content: space-evenly;
     gap: 1em;
+  }
+
+  header > * {
+    display: inline-block;
+    width: unset;
+  }
+
+  header form {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  header,
+  footer {
+    flex-wrap: wrap;
+  }
+
+  footer p {
+    font-size: 1rem;
+  }
+
+  footer .count {
+    font-size: 3rem;
   }
 }
