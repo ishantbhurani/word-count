@@ -125,6 +125,7 @@ footer p {
   color: transparent;
   background-color: var(--clr-black);
   background-clip: text;
+  -webkit-background-clip: text;
 }
 
 footer .count {
