@@ -11,20 +11,22 @@ html {
   padding: 0;
 }
 
+:root {
+  --clr-black: hsla(0, 0%, 33%, 1);
+  --clr-yellow: hsla(47, 100%, 50%, 0.8);
+  --clr-yellow-light: hsla(47, 100%, 50%, 0.5);
+}
+
 body {
   width: 100%;
   min-height: 100vh;
-  background-color: hsla(47, 100%, 50%, 0.8);
-  background: linear-gradient(
-      45deg,
-      hsla(47, 100%, 50%, 0.8),
-      hsla(47, 100%, 50%, 0.5)
-    )
+  background-color: var(--clr-yellow);
+  background: linear-gradient(45deg, var(--clr-yellow), var(--clr-yellow-light))
     no-repeat fixed;
   display: grid;
   grid-template-columns: auto 1fr auto;
   letter-spacing: 1px;
-  color: hsl(0, 0%, 40%);
+  color: var(--clr-black);
 }
 
 header,
@@ -68,7 +70,7 @@ input[type="checkbox"] + label::before {
   content: "";
   width: 1em;
   height: 1em;
-  border: 1px solid #555;
+  border: 1px solid var(--clr-black);
   position: absolute;
   top: 0;
   left: -1.3em;
@@ -80,7 +82,7 @@ input[type="checkbox"] + label::after {
   content: "";
   width: 0.5em;
   height: 0.5em;
-  background-color: #555;
+  background-color: var(--clr-black);
   position: absolute;
   top: 40%;
   left: -1.05em;
@@ -102,7 +104,7 @@ textarea {
   resize: none;
   border: 0;
   outline: transparent;
-  box-shadow: 0 0 1em -0.5em #777;
+  box-shadow: 0 0 1em -0.5em var(--clr-black);
   padding: 1em;
   font-size: 1.5rem;
   color: inherit;
@@ -121,7 +123,7 @@ footer p {
   font-size: 1.25rem;
   font-weight: 700;
   color: transparent;
-  background-color: #555;
+  background-color: var(--clr-black);
   background-clip: text;
 }
 
@@ -134,8 +136,8 @@ footer .count {
   background: rgba(255, 255, 255, 0.1);
   border: transparent;
   outline: transparent;
-  box-shadow: inset 0 0 0.1em 1px #555;
-  color: #555;
+  box-shadow: inset 0 0 0.1em 1px var(--clr-black);
+  color: var(--clr-black);
   font-weight: 700;
   padding: 0.875em;
   border-radius: 0.5em;
