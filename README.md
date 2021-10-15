@@ -33,7 +33,7 @@ This is my submission to [Scrimba](https://scrimba.com/)'s #WeeklyWebDevChalleng
 ### Features
 
 - Count number of characters
-- Count number of words
+- Count number of (\*valid) words
 - Count number of sentences
 - Count number of paragraphs
 - Spell check
@@ -42,6 +42,8 @@ This is my submission to [Scrimba](https://scrimba.com/)'s #WeeklyWebDevChalleng
 - Copy text
 - Clear text field
 - Responsive layout
+
+\* A valid word must start with an alphabet
 
 ## Run Locally
 
